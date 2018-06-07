@@ -23,10 +23,12 @@ There are currently 12 templates:
 ├── banner.html 				// hero unit on index
 ├── base.html 				// all templates extend base, base contains head, body, and nav
 ├── category.html 			// category pages (right-sidebar)
-├── coolstuff.html 			// gallery section on index
+├── style1.html 			// gallery section on index
+├── style2.html 			// gallery section on index
+├── style3.html 			// gallery section on index
 ├── cta.html 					// call to action near footer of index and archives
 ├── footer.html 				// copyright and social icons
-├── index.html 				// one-to-one for index of original
+├── index_page.html 				// one-to-one for index of original
 ├── most_recent.html 			// three column most recent articles template
 ├── page.html 				// all pages (no-sidebar)
 └── pagination.html
@@ -75,9 +77,15 @@ def sidebar(value):
     return 'no-sidebar'
 ```
 
-**3. blog and submenus**<br>
-I wanted to have a category submenu underneath a permanent blog menu item. This code is currently located at line 54 in base.html. How it works is for all my articles in their own category sub-folder, a submenu and subsequent category page are built. Have a look at my [pelicanconf.py](https://bitbucket.org/frankv/frankvalcarcel.com/src/8e74144acd94a7bebc51d20a4c729066dfe6537c/pelicanconf.py?at=default) file if it helps.<br>
-This is how I structured my content directory:
+**3. articles categories**<br>
+To generalize the use of this template, 2 article categories can be defined in the `pelicanconf.py` file.
+```
+STYLE1_CATEGORY = "blog"
+STYLE2_CATEGORY = "programming"
+STYLE2_TITLE = "Behold the icons that visualize what you’re all about. or just take up space. your call bro."
+```
+which correspond to the first two gallery container in the template. The third containter list all the static pages. 
+
 ```
 ├── blog						//standard articles
 │   ├── article1.md
@@ -93,7 +101,6 @@ This is how I structured my content directory:
 
 #### To Do
 [ ] Portfolio Category<br>
-[ ] `coolstuff.html` will pull from portfolio category<br>
 [ ] Add `Featured` and `FeaturedImage` attribute to content and templates<br>
 
 

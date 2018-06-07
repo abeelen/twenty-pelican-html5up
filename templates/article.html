@@ -11,33 +11,38 @@
     <h2>{{ article.title }}</h2>
     <!-- add page sub title here -->
     <p>Posted on {{ article.locale_date }} by {{ article.author }}</p>
-    <p>{{ article.icon }}</p>
   </header>
 
   <!-- One -->
     <section class="wrapper style4 container">
 
-      <!-- Content -->
-        <div class="content">
-          <section>
-            <!-- <a href="#" class="image feature"><img src="images/pic04.jpg" alt="" /></a> -->
-            <h3>Posted in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></h3>
-            <p class="tags">
-            {% if article.tags %}
-              {% for tag in article.tags %}
-                <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-              {% endfor %}
-            {% endif %}</p>
-            <p>{{ article.content }}</p>
-          </section>
+      <div class="row 150%">
+        <div class="8u 12u(narrower)">
+          <!-- Content -->
+          <div class="content">
+            <section>
+              <!-- <a href="#" class="image feature"><img src="images/pic04.jpg" alt="" /></a> -->
+              <h3>Posted in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></h3>
+              <p class="tags">
+                {% if article.tags %}
+                {% for tag in article.tags %}
+                  <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                {% endfor %}
+                {% endif %}</p>
+              <p>{{ article.content }}</p>
+            </section>
         </div>
+      </div>
+			<div class="4u 12u(narrower)">
+        {% include 'sidebar.html' %}
+      </div>
+    </div>
+  </section>
 
-    </section>
+  <!-- Two -->
+  {% include 'most_recent.html' %}
 
-    <!-- Two -->
-    {% include 'most_recent.html' %}
-
-  </article>
+</article>
 
 {% if DISQUS_SITENAME %}
   <div id="comments">

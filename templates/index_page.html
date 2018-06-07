@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% include 'banner.html' %}
+
+{% block content %}
+<!-- Main -->
+<article id="main">
+
+  <header class="special container">
+    <span class="icon fa-{{ page.icon }}"></span>
+    <h2>{{ page.title }}</h2>
+    <!-- add page sub title here -->
+    {{ page.content }}
+  </header>
+
+{% include 'style2.html' %}
+{% include 'style1.html' %}
+
+</article>
+
+{% include 'style3.html' %}
+{% include 'cta.html' %}
+
+{% endblock content %}

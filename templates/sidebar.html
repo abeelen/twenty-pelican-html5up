@@ -1,19 +1,17 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        {% for article in all_articles %}
-        {% if article.featured == 'True' %}
+        {% for side_article in (articles_page.object_list if articles_page else articles) if side_article.category.name == article.category.name %}
             <section>
                 <header>
-                    <h3>{{ article.title }}</h3>
+                    <h3>{{ side_article.title }}</h3>
                 </header>
-                <p>{{ article.summary[:128]|striptags }}...</p>
+                <p>{{ side_article.summary[:128]|striptags }}...</p>
                 <footer>
                     <ul class="buttons">
-                        <li><a href="/{{ article.url }}" class="button small">Learn More</a></li>
+                        <li><a href="/{{ side_article.url }}" class="button small">Learn More</a></li>
                     </ul>
                 </footer>
             </section>
-        {% endif %}
         {% endfor %}
     </div>

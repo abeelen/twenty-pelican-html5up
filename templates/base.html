@@ -38,7 +38,7 @@
     <!-- Header -->
     <header id="header" {% if page_name == 'index' %}class="alt"{% endif %}>
         <h1 class="logo">
-            <a href="{{ SITEURL }}">{{ SITENAME }}, design Twenty <span> by html5 up</span></a>
+            <a href="{{ SITEURL }}">{{ SITENAME }}</a>
         </h1>
         <nav id="nav">
             <ul>
@@ -52,10 +52,10 @@
                     <li><a href="{{ link }}">{{ title }}</a></li>
                 {% endfor %}
                 <li class="submenu">
-                    <a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Blog</a>
+                    <a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archives</a>
                     <ul>
                         {% for cat, null in categories %}
-                            {% if cat != 'blog' %}
+                            {% if cat != 'news' %}
                             <li {% if cat == category %}class="active"{% endif %}>
                                 <a href="{{ SITEURL }}/category/{{ cat|lower }}/">{{ cat }}</a>
                             </li>

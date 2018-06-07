@@ -1,0 +1,22 @@
+<!-- Three -->
+<section  class="wrapper style3 container special">
+
+  <header class="major">
+    <h2>Next look at this <strong>cool stuff</strong></h2>
+  </header>
+
+ {% for row in pages|batch(2) %}
+  <div class="row">
+   {% for page in row %}
+    <div class="6u">
+         <section>
+            <a href="{{ SITEURL }}/{{ page.url }}" class="image feature"><img src="{{ page.image }}" alt="{{ page.title }}" /></a>
+            <header><h3><a href="{{ SITEURL }}/{{ page.url }}" class="image feature">{{ page.title }}</a></h3></header>
+            {{ page.summary }}
+      </section>
+    </div>
+      {% endfor %}
+</div>
+{% endfor %}
+
+</section>

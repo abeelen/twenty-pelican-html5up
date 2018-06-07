@@ -1,0 +1,28 @@
+  <!-- One -->
+  {% if STYLE2_CATEGORY %}
+  <section class="wrapper style2 container special-alt">
+    <div class="row half">
+      <div class="8u">
+
+        <header>
+          <h2>{{ STYLE2_TITLE }}</h2>
+        </header>
+
+        <ul>
+          {% for article in (articles_page.object_list if articles_page else articles) if article.category.name == STYLE2_CATEGORY%}
+            <li><a href="{{ SITEURL }}/{{ article.url }}" rel='bookmark'>{{ article.summary |striptags}}</a></li>
+          {% endfor %}
+       </ul>
+    </div>
+
+    <div class="4u skel-cell-important">
+        <ul class="feature-icons">
+          {% for article in (articles_page.object_list if articles_page else articles) if article.category.name == STYLE2_CATEGORY%}
+          <li><a href="{{ SITEURL }}/{{ article.url }}" rel='bookmark'><span class="icon fa-{{ article.icon }}"><span class="label">{{ article.title |striptags}}</span></a></li>
+          {% endfor %}
+        </ul>
+
+      </div>
+    </div>
+  </section>
+{% endif %}
