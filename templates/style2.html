@@ -10,7 +10,7 @@
 
         <ul>
           {% for article in (articles_page.object_list if articles_page else articles) if article.category.name == STYLE2_CATEGORY%}
-            <li><a href="{{ SITEURL }}/{{ article.url }}" rel='bookmark'>{{ article.summary |striptags}}</a></li>
+            <li><a href="{{ SITEURL }}/{{ article.url }}" rel='bookmark'>{{ article.summary}}</a></li>
           {% endfor %}
        </ul>
     </div>

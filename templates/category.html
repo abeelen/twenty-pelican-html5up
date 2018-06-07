@@ -25,7 +25,7 @@
                         <header>
                             <a href="{{ SITEURL }}/{{ article.url }}"><h3>{{ article.title }}</h3></a>
                         </header>
-                        <p>{{ article.summary|striptags }}</p>
+                        <p>{{ article.summary }}</p>
                     </section>
                 {% endfor %}
                 </div>
@@ -39,7 +39,7 @@
                 <header>
                   <h3>{{ side_article.title }}</h3>
                 </header>
-                <p>{{ side_article.summary[:128]|striptags }}...</p>
+                <p>{{ side_article.summary[:128] }}...</p>
                 <footer>
                     <ul class="buttons">
                         <li><a href="/{{ side_article.url }}" class="button small">Learn More</a></li>
