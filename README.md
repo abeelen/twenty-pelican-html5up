@@ -77,14 +77,25 @@ def sidebar(value):
     return 'no-sidebar'
 ```
 
-**3. articles categories**<br>
+**3. index page**<br>
+Following [pelican's FAQ](http://docs.getpelican.com/en/3.6.3/faq.html#how-can-i-use-a-static-page-as-my-home-page), the index page must have a few extra parmeters
+
+```
+Template: index_page
+URL:
+save_as: index.html
+Status: hidden
+```
+in order to use the full HTML5Up template
+
+**4. articles categories**<br>
 To generalize the use of this template, 2 article categories can be defined in the `pelicanconf.py` file.
 ```
 STYLE1_CATEGORY = "blog"
 STYLE2_CATEGORY = "programming"
 STYLE2_TITLE = "Behold the icons that visualize what you’re all about. or just take up space. your call bro."
 ```
-which correspond to the first two gallery container in the template. The third containter list all the static pages. 
+which correspond to the first two gallery container in the template. The third containter list all the static pages.
 
 ```
 ├── blog						//standard articles
