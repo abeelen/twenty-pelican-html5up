@@ -86,7 +86,7 @@ URL:
 save_as: index.html
 Status: hidden
 ```
-in order to use the full HTML5Up template
+in order to use the full HTML5Up template. You may also define using `SITEBANNER`. For example: `SITEBANNER = 'images/my_banner.jpg'`
 
 **4. articles categories**<br>
 To generalize the use of this template, 2 article categories can be defined in the `pelicanconf.py` file.
