@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 
+{% block sitebanner %}
+  {% if page.image %}
+		<style>
+		  #banner { background-image: url("css/images/light-bl.svg"), url("css/images/light-br.svg"), url("css/images/overlay.png"), url({{ page.image }}); }
+      #cta { background-image: url("css/images/light-tl.svg"), url("css/images/light-tr.svg"), url("css/images/overlay.png"), url({{ page.image }}); }
+		</style>
+		{% endif %}
+{% endblock sitebanner %}
+
 {% include 'banner.html' %}
 
 {% block content %}

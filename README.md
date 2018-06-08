@@ -86,16 +86,25 @@ URL:
 save_as: index.html
 Status: hidden
 ```
-in order to use the full HTML5Up template. You may also define using `SITEBANNER`. For example: `SITEBANNER = 'images/my_banner.jpg'`
 
-**4. articles categories**<br>
-To generalize the use of this template, 2 article categories can be defined in the `pelicanconf.py` file.
+The `Image:` parameter can be used to define the background image
+
+
+**4. articles categories & pages**<br>
+
+To generalize the use of this template, 2 article categoriy can be defined in the `pelicanconf.py` file.
 ```
 STYLE1_CATEGORY = "blog"
 STYLE2_CATEGORY = "programming"
 STYLE2_TITLE = "Behold the icons that visualize what you’re all about. or just take up space. your call bro."
 ```
-which correspond to the first two gallery container in the template. The third containter list all the static pages.
+```
+which correspond to the first two gallery container in the template.
+
+The third containter list all the static pages with the title
+```
+STYLE3_TITLE = "Next look at this <strong>cool stuf</strong>".
+```
 
 ```
 ├── blog						//standard articles

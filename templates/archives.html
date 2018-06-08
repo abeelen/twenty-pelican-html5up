@@ -24,7 +24,7 @@
                         <header>
                             <a href="{{ SITEURL }}/{{ article.url }}"><h3>{{ article.title }}</h3></a>
                         </header>
-                        <p>{{ article.summary[:128]|striptags }}</p>
+                        <p>{{ article.summary }}</p>
                     </section>
                 {% endfor %}
                 </div>

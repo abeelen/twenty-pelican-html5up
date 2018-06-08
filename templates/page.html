@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
+
 {% block title %}{{ page.title|striptags }} | {{ super() }}{% endblock title %}
+
 
 {% block content %}
 <!-- Main -->
@@ -18,7 +20,7 @@
     <!-- Content -->
       <div class="content">
         <section>
-          <!-- <a href="#" class="image feature"><img src="images/pic04.jpg" alt="" /></a> -->
+          <a href="#" class="image feature"><img src="{{ page.image }}" alt="" /></a>
           <p>{{ page.content }}</p>
         </section>
       </div>

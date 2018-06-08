@@ -16,10 +16,12 @@
         <link rel="stylesheet" href="/css/style-noscript.css" />
     </noscript>
 
+		{% block sitebanner %}{% endblock %}
+
 		{% if SITEBANNER %}
 		<style>
-		  #banner { background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url({{ SITEBANNER }}); }
-      #cta { background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/overlay.png"), url({{ SITEBANNER }}); }
+		  #banner { background-image: url("css/images/light-bl.svg"), url("css/images/light-br.svg"), url("css/images/overlay.png"), url({{ SITEBANNER }}); }
+      #cta { background-image: url("css/images/light-tl.svg"), url("css/images/light-tr.svg"), url("css/images/overlay.png"), url({{ SITEBANNER }}); }
 		</style>
 		{% endif %}
 
@@ -63,11 +65,9 @@
                     <a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archives</a>
                     <ul>
                         {% for cat, null in categories %}
-                            {% if cat != 'news' %}
                             <li {% if cat == category %}class="active"{% endif %}>
                                 <a href="{{ SITEURL }}/category/{{ cat|lower }}/">{{ cat }}</a>
                             </li>
-                            {% endif %}
                         {% endfor %}
                     </ul>
                 </li>
